@@ -12,19 +12,19 @@ const Index = () => {
   return (
     <MainLayout>
       {/* Hero */}
-      <section className="hero-gradient">
+      <section className="hero-gradient overflow-hidden">
         <div className="container mx-auto px-4 py-16 md:py-24">
-          <div className="max-w-2xl">
-            <span className="inline-block px-3 py-1 rounded-full bg-primary-foreground/20 text-primary-foreground text-sm font-medium mb-4">
+          <div className="max-w-2xl animate-slide-in-left">
+            <span className="inline-block px-3 py-1 rounded-full bg-primary-foreground/20 text-primary-foreground text-sm font-medium mb-4 animate-fade-in">
               🔥 Up to 50% Off This Season
             </span>
-            <h1 className="text-4xl md:text-6xl font-extrabold text-primary-foreground leading-tight mb-4">
+            <h1 className="text-4xl md:text-6xl font-extrabold text-primary-foreground leading-tight mb-4 animate-fade-up">
               Discover the<br />Best Deals
             </h1>
-            <p className="text-primary-foreground/80 text-lg mb-8 max-w-md">
+            <p className="text-primary-foreground/80 text-lg mb-8 max-w-md animate-fade-up">
               Shop premium products at unbeatable prices. Free shipping on orders over ₹999.
             </p>
-            <div className="flex gap-3">
+            <div className="flex gap-3 animate-fade-up">
               <Link
                 to="/shop"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary-foreground text-primary font-semibold hover:opacity-90 transition-opacity"
@@ -66,13 +66,13 @@ const Index = () => {
 
       {/* Categories */}
       <section className="container mx-auto px-4 py-12">
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex items-center justify-between mb-8 animate-fade-up">
           <h2 className="text-2xl font-bold text-foreground">Shop by Category</h2>
           <Link to="/shop" className="text-sm font-medium text-primary flex items-center gap-1 hover:underline">
             View All <ChevronRight className="w-4 h-4" />
           </Link>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 product-grid">
           {categories.map((cat) => (
             <Link
               key={cat.id}
@@ -97,7 +97,7 @@ const Index = () => {
             View All <ChevronRight className="w-4 h-4" />
           </Link>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 product-grid">
           {featured.slice(0, 8).map((p) => (
             <ProductCard key={p.id} product={p} />
           ))}
@@ -110,7 +110,7 @@ const Index = () => {
       {/* Best Sellers */}
       <section className="container mx-auto px-4 py-12">
         <h2 className="text-2xl font-bold text-foreground mb-8">Best Sellers</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 product-grid">
           {(bestSellers.length > 0 ? bestSellers : products.slice(0, 4)).map((p) => (
             <ProductCard key={p.id} product={p} />
           ))}
@@ -120,8 +120,8 @@ const Index = () => {
       {/* Testimonials */}
       <section className="bg-secondary py-12">
         <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold text-foreground text-center mb-8">What Our Customers Say</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <h2 className="text-2xl font-bold text-foreground text-center mb-8 animate-fade-up">What Our Customers Say</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 product-grid">
             {testimonials.map((t) => (
               <div key={t.id} className="bg-card rounded-2xl p-6 border border-border">
                 <div className="flex items-center gap-1 mb-3">
@@ -144,12 +144,12 @@ const Index = () => {
 
       {/* Newsletter */}
       <section className="container mx-auto px-4 py-16">
-        <div className="hero-gradient rounded-3xl p-8 md:p-12 text-center">
+        <div className="hero-gradient rounded-3xl p-8 md:p-12 text-center animate-fade-up">
           <h2 className="text-3xl font-bold text-primary-foreground mb-3">Get Exclusive Deals</h2>
           <p className="text-primary-foreground/80 mb-6 max-w-md mx-auto">
             Subscribe to our newsletter and get 10% off your first order!
           </p>
-          <div className="flex max-w-md mx-auto">
+          <div className="flex max-w-md mx-auto gap-0">
             <input
               type="email"
               placeholder="Enter your email"
@@ -206,7 +206,7 @@ const FlashSaleSection = () => {
             ))}
           </div>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 product-grid">
           {flashProducts.map((p) => (
             <ProductCard key={p.id} product={p} />
           ))}

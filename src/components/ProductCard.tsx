@@ -13,12 +13,13 @@ const ProductCard = ({ product }: { product: Product }) => {
   return (
     <div className="group bg-card rounded-xl border border-border card-hover overflow-hidden">
       {/* Image */}
-      <div className="relative aspect-square bg-secondary overflow-hidden">
+      <div className="relative aspect-square bg-secondary overflow-hidden rounded-t-xl">
         <Link to={`/product/${product.id}`}>
           <img
             src={product.images[0]}
             alt={product.name}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out"
+            loading="lazy"
           />
         </Link>
         {product.badge && (

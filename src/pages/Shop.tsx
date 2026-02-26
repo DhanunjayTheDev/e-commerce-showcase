@@ -156,7 +156,7 @@ const Shop = () => {
           {/* Product Grid */}
           <div className="flex-1">
             {paginated.length > 0 ? (
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 product-grid">
                 {paginated.map((p) => (
                   <ProductCard key={p.id} product={p} />
                 ))}
